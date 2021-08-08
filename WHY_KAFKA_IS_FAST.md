@@ -37,11 +37,13 @@
     
         ![](./img/copy-bytes-between-channels.gif)
 
-    - Zero-copy approach, under the following model, the number of context switches is reduced from 4 to 2, the number of copies between buffers is reduced from 4 to 3. But its __not query zero-copy __yet
-    ![](./img/reduced-copies.gif)
+    - Zero-copy approach, under the following model, the number of context switches is reduced from 4 to 2, the number of copies between buffers is reduced from 4 to 3. But its __not query zero-copy __yet:
+
+        ![](./img/reduced-copies.gif)
 
     - A further optimization is achieved when running Linux kernels 2.4 and later,  on network interface cards that support the ```gather``` operation. Calling the transferTo() method causes the device to read data into a kernel read buffer by the DMA engine, as per the previous example. However, with the gather operation, there is no copying between the read buffer and the socket buffer. Instead, the NIC is given a pointer to the read buffer, along with the offset and the length, which is vacuumed up by DMA. At no point is the CPU involved in copying buffers:
-    ![](./img/zero-copy.gif)
+
+        ![](./img/zero-copy.gif)
 
 - __Avoiding the GC__:
     - The heavy use of __channels, native buffers, and the page cache__ has one additional benefit — __reducing the load on the garbage collector (GC)__
