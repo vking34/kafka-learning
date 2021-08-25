@@ -127,3 +127,13 @@
 - When a worker fails, tasks are rebalanced across the active workers. When a task fails, no rebalance is triggered as a task failure is considered an exceptional case. As such, failed tasks are not automatically restarted by the framework and should be restarted via the REST API.
 
 ![](../img/task-failover.png)
+
+## Internals
+
+### Internal topics
+
+- ```connect-configs```: stores configurations
+
+- ```connect-status```: helps to elect leaders for connect
+
+- ```connect-offsets```: store source offsets for source connectors
