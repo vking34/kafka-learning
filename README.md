@@ -80,3 +80,10 @@
 
 - 2017 - 0.10.1, 0.10.2:
     - __Improved Connect API, Singple Message Transforms API__
+
+## Bonus
+- Contact me to:
+    - Get more references
+    - My Udemy account:
+        - Courses related to Kafka
+        - 6 Confluent exams 
