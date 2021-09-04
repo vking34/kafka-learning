@@ -113,11 +113,15 @@
 
 ### Connector
 
-- ```name```
+- `name`: (mandatory) Unique name for the connector. Attempting to register again with the same name will fail.
 
-- ```connector.class```
+- `connector.class`: (mandatory) The Java class for the connector.
 
-- ```task.max```: max number of tasks belonging to the connector
+- `task.max`: (mandatory) The maximum number of tasks that should be created for this connector. The connector may create fewer tasks if it cannot achieve this level of parallelism.
+
+- `key.converter`: (optional) Override the default key converter set by the worker.
+
+- `value.converter`: (optional) Override the default value converter set by the worker.
 
 
 ## Task Rebalance
