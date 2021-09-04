@@ -84,6 +84,6 @@
 ## Bonus
 - Contact me to:
     - Get more references
-    - My Udemy account:
+    - Get my Udemy account:
         - Courses related to Kafka
         - 6 Confluent exams 
