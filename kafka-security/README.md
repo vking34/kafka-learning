@@ -20,6 +20,10 @@
 - __ACLs__
     - Kafka ships with a pluggable, out-of-the-box Authorizer implementation that uses ZooKeeper™ to store all the ACLs.
 
+## Best Practices
+
+- For authorization, creating one principal per application and give each principal only the ACLs it requires and no more.
+
 ## References
 
 - https://docs.confluent.io/platform/current/kafka/overview-authentication-methods.html
