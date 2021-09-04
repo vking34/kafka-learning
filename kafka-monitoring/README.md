@@ -1,6 +1,14 @@
 # Kafka Monitoring
 
-## Notes
+## Load
+
+### UnderReplicatedPartitions
+
+- The metric `UnderReplicatedPartitions` monitors the number of partitions that have problems with the ISR (in-sync replicas). Replicas that are added as part of a reassignment will not count toward this value. Alert if value is greater than 0.
+
+- `UnderReplicatedPartitions` means that data is not being replicated to enough number of brokers thereby increasing the probability of data loss should those replicas fail or die. If you have under replicated partitions, it typically points to a problem with one or more brokers and you are having a lot of load on the system. You should root cause the problem immediately to avoid any data loss.
+
+## OS
 
 - The Kafka broker uses a __significant amount of processing for handling requests__. For this reason, __keeping track of the CPU utilization is important__ when monitoring Kafka.
 
