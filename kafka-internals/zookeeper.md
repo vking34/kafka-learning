@@ -1,5 +1,27 @@
 # Zookeeper
 
+## Definition
+
+- `Zookeeper` is a top-level software developed by Apache that acts as a centralized service and is used to maintain naming and configuration data and to provide flexible and robust synchronization within distributed systems. Zookeeper keeps track of status of the Kafka cluster nodes and it also keeps track of Kafka topics, partitions etc
+
+- Zookeeper's internal data structure is like a tree:
+
+    - Each node is called a zNode
+
+    - Each zNode has a path
+
+    - zNodes can be persistent or ephemeral
+
+    - Each zNode can store data
+
+    - Cannot rename a zNode
+
+    - Each zNode can be watched for changes
+
+- To start `zookeeper` service:
+    ```
+    bin/zookeeper-server-start.sh config/zookeeper.properties
+    ```
 
 ## Ensemble
 
