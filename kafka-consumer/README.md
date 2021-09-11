@@ -21,6 +21,11 @@ which consumer.
 
     - If the __committed offset is larger than the offset of the last message__ the client actually processed, all messages between the last processed offset and the committed offset will __be missed by the consumer group__.
 
+
+## Configurations
+
+- `fetch.min.bytes`: the most important one
+
 ## Notes
 
 - When implementing a __multi-threaded__ consumer architecture, it is important to note that the Kafka consumer is __not thread safe__. Multi-threaded access must be properly synchronized, which can be tricky. This is why the __single-threaded model is commonly used__.
