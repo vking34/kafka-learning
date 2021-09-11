@@ -32,6 +32,10 @@ which consumer.
 
 - The only exception to this rule is `wakeup()`, which can safely be used from an external thread to interrupt an active operation. In this case, a `WakeupException` will be thrown from the thread blocking on the operation. This can be __used to shutdown the consumer from another thread__.
 
+- __Heartbeat thread__: Heartbeats are sent periodically to the broker. If no heartbeat is sent during that period, the consumer is considered __dead__.
+
+- __Poll thread__: This is particularly relevant for Big Data frameworks like Spark in case the processing takes a lot of time. This mechanism __detects data processing issues__.
+
 ## References
 
 - https://www.confluent.de/blog/kafka-consumer-multi-threaded-messaging/
