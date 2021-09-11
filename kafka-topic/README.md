@@ -1,5 +1,9 @@
 # Kafka Topic
 
+## Configurations
+
+- `log.cleanup.policy`: Options for the cleanup policy are either `delete` or `compact` or both. The string designates the retention policy to use on old log segments. The default policy `delete` will discard old segments when their retention time or size limit has been reached.
+
 ## CLI
 
 - `describe`: know the leader for the topic, the broker instances acting as replicas for the topic, and the number of partitions of a Kafka topic
