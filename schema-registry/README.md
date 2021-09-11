@@ -22,3 +22,8 @@
 
 ## Avro
 
+## Notes
+
+- __Adding or removing a field with a default value__ is a __fully__ compatible change
+
+- __Adding__ an element to __an enum without a default__ is a __breaking__ schema evolution
