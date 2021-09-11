@@ -1,5 +1,9 @@
 # Kafka KSQL
 
+## KSQL
+
+- KSQL server listens on the default port `8088`
+
 
 ## ksqlDB
 
