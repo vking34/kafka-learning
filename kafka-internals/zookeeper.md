@@ -27,10 +27,18 @@
 
     - `tickTime`: The length of a single tick, which is the basic time unit used by ZooKeeper, as measured in milliseconds. It is used to regulate heartbeats, and timeouts.
 
+    - `initLimit` (optional): Amount of time, in ticks, to allow followers to connect and sync to a leader.
+
+    - `syncLimit` (optional): Amount of time, in ticks, to allow followers to sync with ZooKeeper. If followers fall too far behind a leader, they will be dropped.
+
 - To start `zookeeper` service:
     ```
     bin/zookeeper-server-start.sh config/zookeeper.properties
     ```
+
+- Timeout for follower to connect to a Zookeeper leader: `tickTime` * `initLimit`
+
+- Timeout for follower to sync to a Zookeeper leader: `tickTime` * `syncLimit`
 
 ## Ensemble
 
