@@ -14,6 +14,13 @@ which consumer.
 
 - After deciding on the partition assignment, the consumer leader __sends the list of assignments to the GroupCoordinator__ which sends this information to all the consumers. __Each consumer only sees his own assignment__ - the leader is the only client process that has the full list of consumers in the group and their assignments. __This process repeats every time a rebalance happens__.
 
+## Commits
+
+- By default, the consumer is configured to auto-commit offsets. Using auto-commit gives you "__at least once__" delivery. In order to know where to pick up the work, the consumer will read the latest committed offset of each partition and continue from there.
+    - If the __committed offset is smaller than the offset of the last message__ the client processed, the messages between the last processed offset and the committed offset will be __processed twice__.
+
+    - If the __committed offset is larger than the offset of the last message__ the client actually processed, all messages between the last processed offset and the committed offset will __be missed by the consumer group__.
+
 ## Notes
 
 - When implementing a __multi-threaded__ consumer architecture, it is important to note that the Kafka consumer is __not thread safe__. Multi-threaded access must be properly synchronized, which can be tricky. This is why the __single-threaded model is commonly used__.
