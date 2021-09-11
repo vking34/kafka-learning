@@ -18,6 +18,15 @@
 
     - Each zNode can be watched for changes
 
+# Configurations
+
+- Configuration file:
+    - `clientPort`: The port to listen for client connections; that is, the port that clients attempt to connect to.
+
+    - `dataDir`: The location where ZooKeeper will store the in-memory database snapshots and, unless specified otherwise, the transaction log of updates to the database.
+
+    - `tickTime`: The length of a single tick, which is the basic time unit used by ZooKeeper, as measured in milliseconds. It is used to regulate heartbeats, and timeouts.
+
 - To start `zookeeper` service:
     ```
     bin/zookeeper-server-start.sh config/zookeeper.properties
