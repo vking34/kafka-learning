@@ -20,3 +20,6 @@
 
     - `--if-not-exists`: If set when creating topics, the action will only execute if the topic does not already exist.
 
+## Notes
+
+- If __automatic topic creation is disabled__, `ksqlDB` and `Kafka Streams` applications __continue to work__. They both use the `Admin Client`, so topics are still created.
