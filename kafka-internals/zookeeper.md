@@ -45,3 +45,7 @@
 - Controller registration
 
 - Broker registration
+
+## CLI
+
+- `bin/zookeeper-shell.sh`: check whether all the Kafka nodes are running properly
