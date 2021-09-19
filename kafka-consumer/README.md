@@ -26,6 +26,12 @@ which consumer.
 
 - `fetch.min.bytes`: the most important one
 
+## Auto Offset Reset
+
+A topic partition currently has data for offsets going from __45 to 2311__
+
+- The consumer group has committed the __offset 10__ and `auto.offset.reset=none` -> __crash__
+
 ## Notes
 
 - When implementing a __multi-threaded__ consumer architecture, it is important to note that the Kafka consumer is __not thread safe__. Multi-threaded access must be properly synchronized, which can be tricky. This is why the __single-threaded model is commonly used__.
@@ -35,6 +41,8 @@ which consumer.
 - __Heartbeat thread__: Heartbeats are sent periodically to the broker. If no heartbeat is sent during that period, the consumer is considered __dead__.
 
 - __Poll thread__: This is particularly relevant for Big Data frameworks like Spark in case the processing takes a lot of time. This mechanism __detects data processing issues__.
+
+- Consumers have few tricks available that allow them to guarantee that each message in Kafka will be written to an external system exactly once. The easiest and probably most common way to do exactly-once is by writing results to a system that has some support for __unique keys__
 
 ## References
 

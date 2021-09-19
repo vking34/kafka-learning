@@ -145,3 +145,5 @@
 ## Notes
 
 - Decide __how many tasks__ are needed—choosing the __lower of max.tasks configuration and the number of tables__
+
+- 
