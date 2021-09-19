@@ -54,6 +54,8 @@
 
 - Broker registration
 
+- Dynamic configration for a topic
+
 ## CLI
 
 - `bin/zookeeper-shell.sh`: check whether all the Kafka nodes are running properly
